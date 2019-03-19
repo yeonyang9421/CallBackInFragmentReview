@@ -9,6 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class SecondFragment extends ColorFragment {
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
 
     public void setColor(int color) {
         getView().setBackgroundColor(color);
