@@ -12,21 +12,11 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentColorList extends Fragment {
+public class ColorListFragment extends Fragment {
 
     private List<String> listColor=new ArrayList<>();
     RecyclerView mRecyclerView;
     RecyclerViewAdapter mRecyclerAdapter;
-
-
-    public interface onSelectListener{
-        void onSelectColor(int position);
-    }
-    onSelectListener mListener;
-
-    public void setOnSelectListener(onSelectListener listener){
-        mListener=listener;
-    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -39,14 +29,6 @@ public class FragmentColorList extends Fragment {
         mRecyclerView=view.findViewById(R.id.recycler);
         mRecyclerAdapter=new RecyclerViewAdapter(listColor);
         mRecyclerView.setAdapter(mRecyclerAdapter);
-
-
-        mRecyclerAdapter.setOnSendItemPosition(new RecyclerViewAdapter.onSendItemPosition() {
-            @Override
-            public void onSendItemClick(int position) {
-                mListener.onSelectColor(position);
-            }
-        });
     }
 
     @Nullable
