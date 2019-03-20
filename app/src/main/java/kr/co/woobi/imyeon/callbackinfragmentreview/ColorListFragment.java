@@ -22,13 +22,15 @@ public class ColorListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        listColor.add("Red");
-        listColor.add("Green");
-        listColor.add("Blue");
-
         mRecyclerView=view.findViewById(R.id.recycler);
         mRecyclerAdapter=new RecyclerViewAdapter(listColor);
         mRecyclerView.setAdapter(mRecyclerAdapter);
+    }
+
+    public ColorListFragment() {
+        listColor.add("Red");
+        listColor.add("Green");
+        listColor.add("Blue");
     }
 
     @Nullable

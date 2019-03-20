@@ -14,7 +14,7 @@
         android:name="kr.co.woobi.imyeon.callbackinfragmentreview.ColorListFragment" />
 
     <fragment
-        android:id="@+id/fragmnetColor"
+        android:id="@+id/fragmentColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:name="kr.co.woobi.imyeon.callbackinfragmentreview.ColorFragment"/>

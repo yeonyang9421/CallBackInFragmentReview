@@ -14,7 +14,8 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 public class ColorFragment extends Fragment {
-
+    public ColorFragment() {
+    }
 
     @Nullable
     @Override
@@ -29,6 +30,7 @@ public class ColorFragment extends Fragment {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(EventItem event) {
+
         getView().setBackgroundColor(event.getColor());
     }
 

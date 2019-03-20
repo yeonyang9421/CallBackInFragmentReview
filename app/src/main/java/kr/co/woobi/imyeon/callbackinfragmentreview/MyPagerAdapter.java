@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MyPagerAdapter extends FragmentPagerAdapter {
     private List<Fragment> mData = new ArrayList<>();
@@ -15,9 +16,14 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
     public MyPagerAdapter(FragmentManager fm) {
         super(fm);
 
+        int r = new Random().nextInt(256);
+        int g = new Random().nextInt(256);
+        int b = new Random().nextInt(256);
+        int randomColor = Color.rgb(r, g, b);
+
         mData.add(new FirstSceneFragment());
-        mData.add(new SecondFragment());
-        mData.add(new ColorFragment());
+        mData.add(SecondFragment.newInstance(Color.RED));
+        mData.add(SecondFragment.newInstance(randomColor));
     }
 
     @Override
@@ -33,7 +39,7 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        String title=position+"번째";
+        String title = position + "번째";
         switch (position) {
             case 0:
                 title = "이벤트 예제";

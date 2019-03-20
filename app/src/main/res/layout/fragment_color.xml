@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
 
     <fragment
-        android:id="@+id/fragmnetColor"
-       android:name="kr.co.woobi.imyeon.callbackinfragmentreview.ColorFragment"
+        android:id="@+id/fragmentColor"
+        android:name="kr.co.woobi.imyeon.callbackinfragmentreview.ColorFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 </LinearLayout>
